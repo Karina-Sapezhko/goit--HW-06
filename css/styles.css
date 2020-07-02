@@ -527,17 +527,19 @@ ul {
   border-radius: 4px;
   background-color: #2f303a;
   padding: 15px;
-  max-width: 359px;
+  min-width: 359px;
   margin-right: 12px;
   color: var(--white-text-color);
+  outline-color: var(--accent-focus-color);
+  cursor: pointer;
 }
 
 .call-input::placeholder {
-  font-size: 16px;
+  /* font-size: 16px;
   line-height: 1.25;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.03em; */
   color: rgba(255, 255, 255, 0.6);
-  font-family: roboto, sans-serif;
+  /* font-family: roboto, sans-serif; */
 }
 
 .button.subscribe {
@@ -581,6 +583,7 @@ ul {
   border-radius: 4px;
   border-color: transparent;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
 .filter:hover,
@@ -773,6 +776,10 @@ ul {
 .link-agreement {
   color: var(--accent-focus-color);
   margin-left: 4px;
+}
+
+.input-form:invalid {
+  border-color: red;
 }
 
 .field-form:focus-within > .svg-name,
