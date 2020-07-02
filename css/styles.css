@@ -186,6 +186,7 @@ ul {
   border-radius: 4px;
   cursor: pointer;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
 }
 
 .button:hover,
@@ -529,17 +530,17 @@ ul {
   padding: 15px;
   min-width: 359px;
   margin-right: 12px;
+  font-size: 16px;
+  line-height: 1.25;
   color: var(--white-text-color);
   outline-color: var(--accent-focus-color);
   cursor: pointer;
 }
 
 .call-input::placeholder {
-  /* font-size: 16px;
+  font-size: 16px;
   line-height: 1.25;
-  letter-spacing: 0.03em; */
   color: rgba(255, 255, 255, 0.6);
-  /* font-family: roboto, sans-serif; */
 }
 
 .button.subscribe {
@@ -707,8 +708,7 @@ ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 528px;
-  max-height: 581px;
+  max-width: 100%;
   background-color: var(--white-text-color);
   padding: 40px;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -746,12 +746,10 @@ ul {
   line-height: 1.15;
   text-align: center;
   color: var(--main-text-color);
-  /* margin-top: 0; */
   margin-bottom: 30px;
 }
 
 .modal-form {
-  /* max-width: 528px; */
   margin-left: auto;
   margin-right: auto;
 }
@@ -789,7 +787,8 @@ ul {
 
 .field-form:focus-within > .label-form,
 .input-form:not(:placeholder-shown) + .label-form {
-  transform: translateY(-40px) translateX(-23px);
+  transform: translate(-28px, calc(-100% - 4px));
+  top: 0;
   color: var(--accent-focus-color);
   font-size: 12px;
   line-height: 1.16;
@@ -802,7 +801,8 @@ ul {
 }
 
 .field-form:hover > .label-form {
-  transform: translateY(-40px) translateX(-23px);
+  transform: translate(-28px, calc(-100% - 4px));
+  top: 0;
   color: var(--accent-focus-color);
   font-size: 12px;
   line-height: 1.16;
@@ -831,12 +831,16 @@ ul {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   cursor: pointer;
+  font-size: 14px;
+  line-height: 0.14;
+  letter-spacing: 0.01em;
+  color: var(--main-text-color);
 }
 
 .input-form.textarea {
   padding: 12px 16px;
-  max-height: 120px;
   resize: none;
+  min-height: 120px;
 }
 
 .label-comment {
@@ -862,9 +866,9 @@ ul {
 }
 
 .label-checkbox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  position: relative;
+  padding-left: 40px;
   font-size: 14px;
   line-height: 1.7;
   cursor: pointer;
@@ -876,12 +880,16 @@ ul {
 }
 
 .icon-checkbox {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
   content: '';
   width: 15px;
   height: 15px;
   border: 2px solid var(--main-text-color);
   border-radius: 2px;
-  margin-right: 8px;
+
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
